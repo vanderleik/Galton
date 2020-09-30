@@ -23,7 +23,7 @@ getwd()
 # Estou usando o tidyverse para trabalhar com os dados, porque ele engloba uma série de pacotes para análise e manipulação de dados.
 library(tidyverse)
 library(UsingR)
-library("ggpubr")
+library(ggpubr)
 
 # Como os dados estão estão em polegadas e no Brasil trabalhamos com centímetros, o primeiro passo foi converter os dados.
 # Uma polegada equivale a aproximadamente 2,54cm.
@@ -67,7 +67,6 @@ parent = c(round(devPadPais, digits = 2), round(varPais, digits = 2), round(cvPa
 # passo o nome dos vetores (sem precisar usar o "c")
 dispersao = data.frame(estatisticas, child, parent)
 dispersao
-View(dispersao)
 
 range(galton$child)
 diff(range(galton$child))
@@ -92,7 +91,7 @@ hist(galton$parent, main = "Histograma para a altura dos pais", xlab = "altura (
 # O histograma mostra novamente os dados extremos da altura dos pais, mas como há uma distribuição mais concentrada, esses dados extremos não afetam o resultado da análise.
 # Por outro lado, o histograma dos filhos mostra como de fato os dados são mais dispersos do que os a distribuição das alturas dos pais, como se pode observar pelas medidas de dispersão.
 
-# Listando as categorias das variáveis nominais
+# Listando as categorias das variáveis
 
 table(galton$child)
 table(galton$parent)
@@ -112,6 +111,58 @@ ggscatter(galton, x = "parent", y = "child",
           add = "reg.line", conf.int = TRUE, 
           cor.coef = TRUE, cor.method = "pearson",
           xlab = "Pais", ylab = "Filhos", title = "Gráfico de dispersão da altura dos pais e filhos")
+
+# Vou criar duas novas colunas (variáveis categóricas), onde eu classifico os indivíduos em baixo, mediano, alto e muito alto.
+# O critério para definir essas alturas é relativa a cada uma das variáveis, child e parent.
+# Para fazer essa divisão dos dados eu utilizo os quartis obtidos no summary logo acima.
+
+group_child <- function(child){
+  if (child >= 156 & child <= 168){
+    return('baixo')
+  }else if(child > 168 & child <= 173){
+    return('mediano')
+  }else if (child > 173 & child <= 178){
+    return('alto')
+  }else if (child > 178){
+    return('muito alto')
+  }
+}
+
+group_parent <- function(parent){
+  if (parent >= 162 & parent <= 171){
+    return('baixo')
+  }else if(parent > 171 & parent <= 174){
+    return('mediano')
+  }else if (parent > 174 & parent <= 176){
+    return('alto')
+  }else if (parent > 176){
+    return('muito alto')
+  }
+}
+
+
+# ajusta essas transformações no dataset
+galton$child_group <- sapply(galton$child, group_child)
+galton$child_group <- as.factor(galton$child_group)
+
+galton$parent_group <- sapply(galton$parent, group_parent)
+galton$parent_group <- as.factor(galton$parent_group)
+
+View(galton)
+
+head(galton)
+# Agora podemos observar que alguns indivíduos baixos são filhos de pais considerados baixos, mas alguns outros são filhos de pais medianos, altos ou muito altos. O mesmo acontece com as demais categorias definidas.
+
+ggplot(data = galton) +
+  geom_point(mapping = aes(x = parent, y = child, color = child_group)) +
+  labs(title="Gráfico de dispersão da altura dos filhos e dos pais",  
+       y="Altura dos filhos",x="Altura dos pais", caption="") 
+
+ggplot(data = galton) +
+  geom_point(mapping = aes(x = parent, y = child)) +
+  facet_wrap(~child_group) +
+  labs(title="Gráfico de dispersão da altura dos filhos e dos pais",  
+       y="Altura dos filhos",x="Altura dos pais", caption="") 
 
 # O gráfico de disperão mostra claramente que à medida em que a média da altura dos pais aumenta, a média da altura dos filhos almenta também, indicando a possibilidade de termos uma correlação positiva entre essas duas variáveis.
 
@@ -194,3 +245,4 @@ SST = sum((mean(galton$child) - resultados$Real)^2)
 # Ajuda a avaliar o nível de precisão do nosso modelo. Quanto maior, melhor, sendo 1 o valor ideal.
 R2 = 1 - (SSE/SST)
 R2
+
