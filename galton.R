@@ -20,12 +20,13 @@
 setwd("C:/FCD/PortfolioR/Galton")
 getwd()
 
-# Estou usando o tidyverse para trabalhar com os dados, porque ele engloba uma série de pacotes para análise e manipulação de dados.
+# Pacotes carregados para a análise a seguir.
+
 library(tidyverse)
 library(UsingR)
 library(ggpubr)
 
-# Como os dados estão estão em polegadas e no Brasil trabalhamos com centímetros, o primeiro passo foi converter os dados.
+# Como os dados estão estão em polegadas e no Brasil trabalhamos com centímetros, o primeiro passo é converter os dados.
 # Uma polegada equivale a aproximadamente 2,54cm.
 
 galton <- 2.54 * galton
@@ -44,8 +45,33 @@ View(galton)
 summary(galton$child)
 summary(galton$parent)
 
-# A altura dos pais varia entre 162,6cm e 185,4cm, enquanto os filhos tem como amplitude os valores mínimo de 156,7cm e máximo de 187,2cm.
-# O interessante é que os filhos tem uma altura mínima menor e uma altura máxima maior do que os pais, e no entanto, a média e a mediana da altura dos filhos é menor do que a dos pais.
+range(galton$child)
+diff(range(galton$child)) # amplitude
+
+range(galton$parent)
+diff(range(galton$parent)) # amplitude
+
+# Criando função para obter a moda
+obter_moda <- function(x) {
+  uniqv <- unique(x)
+  uniqv[which.max(tabulate(match(x, uniqv)))]
+}
+
+# Obtendo a moda
+moda_child <- obter_moda(galton$child)
+moda_child
+moda_parent <- obter_moda(galton$parent)
+moda_parent
+
+# Contagem de vezes que a moda aparece no dataset
+filter(galton, child == 175.768) %>%
+  count()
+filter(galton, parent == 173.99) %>%
+  count()
+
+# A amplitude da altura dos filhos é maior do que a amplitude da altura dos pais. Enquanto a altura dos pais varia entre 162,6cm e 185,4cm, a dos filhos varia entre 156,7cm 187,2cm.
+# A altura média dos filhos é de 172,9cm enquanto a altura média dos pais é ligeiramente maior, 173,5Ocm.
+# Analisando a mediana, vemos que a mediana dos pais é quase um centímetro maior que a dos filhos enquanto a moda dos filhos é quase dois centímetros maior. Porém, a altura de 175,768cm (moda) aparece 167 vezes para os filhos enquanto a altura de 173,99cm (moda) aparece 219 vezes para os pais.
 
 # 2 - Medidas de dispersão: desvio padrão, variância e coeficiente de varição.
 
@@ -68,30 +94,35 @@ parent = c(round(devPadPais, digits = 2), round(varPais, digits = 2), round(cvPa
 dispersao = data.frame(estatisticas, child, parent)
 dispersao
 
-range(galton$child)
-diff(range(galton$child))
+# Podemos também estimar uma medida da variância conjunta dos dados, através da covariância, e uma medida do grau de associação linear entre as variáveis, com o coeficiente de correlação.
+# Covariância
+covar = cov(galton$parent, galton$child)
+covar
 
-range(galton$parent)
-diff(range(galton$parent))
+# Correlação
+correl = cor(galton$parent, galton$child)
+correl
 
-# Analisando os resultados das medidas de dispersão podemos ver que a altura dos filhos tem uma variabilidade maior do que a dos pais.
-# Lembrando que a amplitude das medidas de altura dos pais é menor do que a dos filhos. Enquanto os filhos tem altura mínima e máxima variando entre 156,718 e 187,198, ou uma amplitude de 30,48cm, enquanto os pais tem altura mínima e máxima variando entre 162,56 e 185,42, ou uma amplitude de 22,86cm. 
+# Analisando os resultados das medidas de dispersão podemos ver que a altura dos filhos tem uma variabilidade maior do que a dos pais em torno da média. O mesmo pode ser visto pelo coeficiente de variação, que é uma medida padronizada de dispersão.
+# A covariância indica haver algum grau de variação conjunta positiva entre as varáveis, mas a medida de correlação, de 0,46, dá uma ideia de uma associação não muito forte entre elas.
 
 # Boxplot
+# Quero comparar os dois boxplots lado a lado, por isso uso a função 'par'
+par(mfrow = c(1, 2), oma = c(4, 1, 1, 1))
 boxplot(galton$child, main = "Boxplot para a altura dos filhos", ylab = "Child (cm)")
 boxplot(galton$parent, main = "Boxplot para a altura dos pais", ylab = "Parent (cm)")
 
-# Não conseguimos identificar dados discrepantes nos dados de altura dos filhos, mas no caso da altura dos pais parece haver dois dados discrepantes, que são os dados extremos.
-# Porém, esses outliers não precisam de nenhum tratamento, pois não afetam o comportamento investigado neste estudo.
+# Não conseguimos identificar dados discrepantes na variável altura dos filhos, mas no caso da altura dos pais parece haver valores extremos tanto na borda superior quanto inferior.
+# Não vamos nos preocupar com esses outliers por enquanto, acredito que eles não irão afetar o resultado do modelo que irei estimar na sequência.
 
 # Histograma
+par(mfrow = c(1, 2), oma = c(4, 1, 1, 1))
 hist(galton$child, main = "Histograma para a altura dos filhos", xlab = "Altura (cm)")
-hist(galton$parent, main = "Histograma para a altura dos pais", xlab = "altura (cm)")
+hist(galton$parent, main = "Histograma para a altura dos pais", xlab = "Altura (cm)")
 
-# O histograma mostra novamente os dados extremos da altura dos pais, mas como há uma distribuição mais concentrada, esses dados extremos não afetam o resultado da análise.
-# Por outro lado, o histograma dos filhos mostra como de fato os dados são mais dispersos do que os a distribuição das alturas dos pais, como se pode observar pelas medidas de dispersão.
+# O histograma mostra novamente os dados extremos da altura dos pais. Ele mostra também como os dados são mais dispersos no caso da distribuição da altura dos filhoes, comparativamente à distribuição da altura dos pais, como se pode observar pelas medidas de dispersão.
 
-# Listando as categorias das variáveis
+# Quero analisar os dados em forma de categoria, para poder definir uma estatura relativa para cada variável.
 
 table(galton$child)
 table(galton$parent)
@@ -102,19 +133,12 @@ model_table2 <- table(galton$parent)
 prop.table(model_table1) #retorna a proporção % de filhos em cada categoria de altura
 prop.table(model_table2) #retorna a proporção % de pais em cada categoria de altura
 
-# Graficamente a diferença fica clara
+# Graficamente talvez seja melhor para entender a diferença entre as séries
+par(mfrow = c(1, 2), oma = c(4, 1, 1, 1))
 barplot(prop.table(table(galton$child)), xlab = "child")
 barplot(prop.table(table(galton$parent)), xlab = "parent")
 
-# Gráfico de dispersão com linha de regressão
-ggscatter(galton, x = "parent", y = "child", 
-          add = "reg.line", conf.int = TRUE, 
-          cor.coef = TRUE, cor.method = "pearson",
-          xlab = "Pais", ylab = "Filhos", title = "Gráfico de dispersão da altura dos pais e filhos")
-
-# Vou criar duas novas colunas (variáveis categóricas), onde eu classifico os indivíduos em baixo, mediano, alto e muito alto.
-# O critério para definir essas alturas é relativa a cada uma das variáveis, child e parent.
-# Para fazer essa divisão dos dados eu utilizo os quartis obtidos no summary logo acima.
+# Vou criar duas novas colunas (variáveis categóricas), onde eu classifico os indivíduos em baixo, mediano, alto e muito alto, usando como critério os quartis definidos anteriormente nas estatísticas descritivas, que se mostraram mais adequados. Porém, eu poderia também usar a "prop.table" pra isso, mas não quero fazer isso nesse momento.
 
 group_child <- function(child){
   if (child >= 156 & child <= 168){
@@ -150,8 +174,7 @@ galton$parent_group <- as.factor(galton$parent_group)
 
 View(galton)
 
-head(galton)
-# Agora podemos observar que alguns indivíduos baixos são filhos de pais considerados baixos, mas alguns outros são filhos de pais medianos, altos ou muito altos. O mesmo acontece com as demais categorias definidas.
+# Nos gráficos gerados a partir da categorização é possível observar que a medida que a altura dos pais aumenta, a altura dos filhos também aumenta, mas não na mesma proporção. Isso corrobora com a tese de Galton sobre a regressão à mediocridade, ou seja, a tendência dos filhos terem altura mais próximas da média.
 
 ggplot(data = galton) +
   geom_point(mapping = aes(x = parent, y = child, color = child_group)) +
@@ -164,23 +187,14 @@ ggplot(data = galton) +
   labs(title="Gráfico de dispersão da altura dos filhos e dos pais",  
        y="Altura dos filhos",x="Altura dos pais", caption="") 
 
-# O gráfico de disperão mostra claramente que à medida em que a média da altura dos pais aumenta, a média da altura dos filhos almenta também, indicando a possibilidade de termos uma correlação positiva entre essas duas variáveis.
+# O gráfico de disperãoa abaixo mostra que à medida em que a média da altura dos pais aumenta, a média da altura dos filhos almenta também, indicando a possibilidade de termos uma correlação positiva entre essas duas variáveis.
 
-# Covariância
-covar = cov(galton$parent, galton$child)
-covar
+ggscatter(galton, x = "parent", y = "child", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Pais", ylab = "Filhos", title = "Gráfico de dispersão da altura dos pais e filhos")
 
-# Correlação
-correl = cor(galton$parent, galton$child)
-correl
-
-# Construindo a Matriz de Correlação
-cor(galton[c("child", "parent")])
-
-
-# A covariância indica haver algum grau de cariação conjunta entre as varáveis, mas a medida de correlação, de 0,46, dá uma ideia de correlação não muito forte entre elas.
-
-# Vou dividir a amostra em dois grupos. 70% para treinamento e 30% para previsão
+# Entrando na reta final, Vou dividir a amostra em dois grupos, sendo 70% para treinamento e 30% para teste. A partir daí eu treino o modelo e verifico a sua acurácia ou capacidade de prever a altura dos filhos, tendo como base apenas a altura dos pais (uma espécie de transferência de altura, ou hereditariedade).
 linhas <- sample(1:nrow(galton), 0.7 * nrow(galton))
 dados_treino <- galton[linhas,]
 dados_teste <- galton[-linhas,]
@@ -188,35 +202,29 @@ dados_teste <- galton[-linhas,]
 View(dados_treino)
 View(dados_teste)
 
+# Eu gosto de analisar o resultado de um modelo estimado, mesmo que seja com dados de treino. Isso me ajuda a verificar se o modelo está atendendo àquilo que se espera dele, a priori.
+# No caso deste estudo, o que eu espero encontrar é uma relação positiva e significativa entre a variável dependente, child, e a variável explicativa, parent.
+# Isso significa que o coeficiente estimado "parent" tem que ter sinal positivo e tem que ser estatisticamente significativo.
 # Para treinar o modelo de regressão eu uso a função "lm".
 
 modelo1 <- lm(child ~ parent, data = dados_treino)
 summary(modelo1)
 
-# Os coeficientes estimados são estatisticamente significativos, tanto o intercepto quando o coeficiente angular, o que significa que há uma relação entre essas variáveis.
-# Em média, para cada centímetro a mais de altura dos pais, 0,63cm são transferidos aos filhos, na forma de herança genética.
-# Dito de outra forma, um pai de 180cm de altura, por exemplo, esperamos que tenha um filho com 177,10cm de altura.
-# Porém, há uma parcela expressiva da altura dos filhos que não pode ser explicada pela altura dos pais. Ou seja, quando nasce um filho, sabemos que pelo menos 63cm da sua altura não é explicada pela altura dos seus pais.
+# Uma vez que o modelo tenha sido treinado, podemos ver que o sinal dos coeficientes estimados estão de acordo com o que se esperava. Ou seja, o intercepto é positivo, até mesmo porque não faria sentido ele ser negativo. Ele representa a soma de todas as variáveis que de alguma forma influenciam a altura dos filhos de forma significativa, mas que não estamos considerando neste modelo.
+# Em termos numéricos, sem considerar a altura dos pais, os filhos terão pelo menos 57cm de altura. É estranho pensar assim, mas podemos pensar também que os pais não são capazes de influenciar pelo menos 57cm da altura dos filhos!
+# O coeficiente angular, determina a capacidade de transferência da altura dos pais para os filhos. Para cada centímetro a mais de altura dos pais, os filhos terão 0,67cm a mais de altura. Note que não é proporcional, mas é positivo. Já tínhamos visto acima, pelas outras estatísticas, que haveria uma relação positiva entre a altura dos pais e dos filhos, mas que essa relação não seria muito forte. Isso significa que existem outros fatores que afetam a altura dos filhos, e que não é apenas a hereditariedade.
+# Do ponto de vista da significância estatística, os dois coeficientes estimados são estatisticamente significativos, ao nível de 1% de significância estatística. A probabilidade de se cometer um erro do tipo 1 é praticamente nulo.
+# Olhando agora o R quadrado, vemos que o nosso modelo é capaz de explicar apenas 22,32% da altura dos filhos. Como dito anteriormente, há outras variáveis que não foram consideradas neste estudo e que afetam de forma significativa a variável dependente.
+# Em termos práticos, a capacidade preditiva do modelo é bem fraca!
 
-# Agora fazemos previsões com o modelo usando dados de teste
+
+# Vamos prosseguir com a análise, apenas a título de exercício, tendo em vista a qualidade dos resultados apresentados.
 previsoes <- predict(modelo1, dados_teste)
 summary(previsoes)
 summary(galton$child)
 
-# Obtendo os resíduos
-res <- residuals(modelo1)
-
-# Convertendo o objeto para um dataframe
-res <- as.data.frame(res)
-head(res)
-
-# Histograma dos resíduos
-ggplot(res, aes(res)) +  
-  geom_histogram(fill = 'blue', 
-                 alpha = 0.5, 
-                 binwidth = 1)
-
-plot(modelo1)
+# Vamos dar uma olhada rápida no resumo estatístico dos resultados previstos comparativamente com os dados de treino. O modelo super estima os valores mínimos e subestima os valores máximos da série de dados.
+# Tanto a média quanto a mediana são previstos de forma quase precisa, o que é bem interessante.
 
 # Visualizando os valores previstos e observados
 resultados <- cbind(previsoes, dados_teste$child) 
@@ -224,25 +232,5 @@ colnames(resultados) <- c('Previsto','Real')
 resultados <- as.data.frame(resultados)
 min(resultados)
 max(resultados)
-head(resultados)
+
 View(resultados)
-
-# Calculando o erro médio
-# Quão distantes seus valores previstos estão dos valores observados
-# MSE
-mse <- mean((resultados$Real - resultados$Previsto)^2)
-print(mse)
-
-# RMSE
-rmse <- mse^0.5
-rmse
-
-# Calculando R Squared
-SSE = sum((resultados$Previsto - resultados$Real)^2)
-SST = sum((mean(galton$child) - resultados$Real)^2)
-
-# R-Squared
-# Ajuda a avaliar o nível de precisão do nosso modelo. Quanto maior, melhor, sendo 1 o valor ideal.
-R2 = 1 - (SSE/SST)
-R2
-
