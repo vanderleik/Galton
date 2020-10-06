@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+  padding-top: 0px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1 id="projeto-nr-01---altura-dos-filhos-versus-altura-dos-pais">Projeto nr. 01 - Altura dos filhos versus altura dos pais</h1>
+<p>Dados utilizados por Francis Galton na análise da altura dos filhos 
+em comparação à altura dos pais. A famosa comparação de Galton das 
+alturas de 928 filhos adultos com as de seus 205 pares de pais (pai e 
+mãe). Quando os pais são mais altos que a média, seus filhos tendem a 
+ser mais baixos (ou seja, mais próximos da média) e quando os pais são 
+mais baixos que a média, seus filhos tendem a ser mais altos. Galton 
+chamou isso de “regressão à mediocridade”.</p>
+<p>Variáveis: parent = altura do pai/mãe em polegadas (amplitude 64 - 
+73) child = altura da criança em polegadas (amplitude 61.7 - 73.7)</p>
+<h3 id="fonte">Fonte:</h3>
+<p>Galton, F., “Regression Towards Mediocrity in Hereditary Stature,” 
+Journal of the Anthropological Institute of Great Britain and Ireland, 
+15, 246-263, 1886.</p>
+<p>Os dados estão disponíveis no pacote UsingR.</p>
+<h2 id="pacotes-carregados-para-a-análise-a-seguir">Pacotes carregados para a análise a seguir.</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<pre><code>## -- Attaching packages -------------------------------------- tidyverse 1.3.0 --
+
+## v ggplot2 3.3.0     v purrr   0.3.3
+## v tibble  2.1.3     v dplyr   0.8.5
+## v tidyr   1.0.2     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.5.0
+
+## -- Conflicts ----------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">library</span>(UsingR)</a></code></pre></div>
+<pre><code>## Loading required package: MASS
+
+## 
+## Attaching package: 'MASS'
+
+## The following object is masked from 'package:dplyr':
+## 
+##     select
+
+## Loading required package: HistData
+
+## Loading required package: Hmisc
+
+## Loading required package: lattice
+
+## Loading required package: survival
+
+## Loading required package: Formula
+
+## 
+## Attaching package: 'Hmisc'
+
+## The following objects are masked from 'package:dplyr':
+## 
+##     src, summarize
+
+## The following objects are masked from 'package:base':
+## 
+##     format.pval, units
+
+## 
+## Attaching package: 'UsingR'
+
+## The following object is masked from 'package:survival':
+## 
+##     cancer
+</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">library</span>(ggpubr)</a></code></pre></div>
+<p>Como os dados estão estão em polegadas e no Brasil trabalhamos com 
+centímetros, o primeiro passo é converter os dados. Uma polegada 
+equivale a aproximadamente 2,54cm.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">galton &lt;-<span class="st"> </span><span class="fl">2.54</span> <span class="op">*</span><span class="st"> </span>galton</a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw">head</span>(galton, <span class="dv">15</span>)</a></code></pre></div>
+<pre><code>##      child parent
+## 1  156.718 179.07
+## 2  156.718 173.99
+## 3  156.718 166.37
+## 4  156.718 163.83
+## 5  156.718 162.56
+## 6  157.988 171.45
+## 7  157.988 171.45
+## 8  157.988 171.45
+## 9  157.988 168.91
+## 10 157.988 168.91
+## 11 157.988 168.91
+## 12 157.988 163.83
+## 13 160.528 179.07
+## 14 160.528 176.53
+## 15 160.528 173.99
+</code></pre>
+<h2 id="estatísticas-descritivas">Estatísticas descritivas</h2>
+<p>Optei por dividir as estatísticas descritivas em dois grupos:</p>
+<p>1 - Medidas de tendência central: média, mediana, moda, valores 
+mínimo e máximo e amplitude; 2 - Medidas de dispersão: desvio padrão, 
+variância e coeficiente de varição.</p>
+<h2 id="1---medidas-de-tendência-central-média-mediana-moda-valores-mínimo-e-máximo-e-amplitude">1 - Medidas de tendência central: média, mediana, moda, valores mínimo e máximo e amplitude:</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">summary</span>(galton<span class="op">$</span>child)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   156.7   168.1   173.2   172.9   178.3   187.2
+</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">summary</span>(galton<span class="op">$</span>parent)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   162.6   171.4   174.0   173.5   176.5   185.4
+</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">range</span>(galton<span class="op">$</span>child)</a></code></pre></div>
+<pre><code>## [1] 156.718 187.198
+</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">diff</span>(<span class="kw">range</span>(galton<span class="op">$</span>child)) <span class="co"># amplitude</span></a></code></pre></div>
+<pre><code>## [1] 30.48
+</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">range</span>(galton<span class="op">$</span>parent)</a></code></pre></div>
+<pre><code>## [1] 162.56 185.42
+</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">diff</span>(<span class="kw">range</span>(galton<span class="op">$</span>parent)) <span class="co"># amplitude</span></a></code></pre></div>
+<pre><code>## [1] 22.86
+</code></pre>
+<p>Criando função para obter a moda</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">obter_moda &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb20-2" title="2">  uniqv &lt;-<span class="st"> </span><span class="kw">unique</span>(x)</a>
+<a class="sourceLine" id="cb20-3" title="3">  uniqv[<span class="kw">which.max</span>(<span class="kw">tabulate</span>(<span class="kw">match</span>(x, uniqv)))]</a>
+<a class="sourceLine" id="cb20-4" title="4">}</a></code></pre></div>
+<p>Obtendo a moda</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1">moda_child &lt;-<span class="st"> </span><span class="kw">obter_moda</span>(galton<span class="op">$</span>child)</a>
+<a class="sourceLine" id="cb21-2" title="2">moda_child</a></code></pre></div>
+<pre><code>## [1] 175.768
+</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">moda_parent &lt;-<span class="st"> </span><span class="kw">obter_moda</span>(galton<span class="op">$</span>parent)</a>
+<a class="sourceLine" id="cb23-2" title="2">moda_parent</a></code></pre></div>
+<pre><code>## [1] 173.99
+</code></pre>
+<p>Contagem de vezes que a moda aparece no dataset</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">filter</span>(galton, child <span class="op">==</span><span class="st"> </span><span class="fl">175.768</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="st">  </span><span class="kw">count</span>()</a></code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##       n
+##   &lt;int&gt;
+## 1   167
+</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">filter</span>(galton, parent <span class="op">==</span><span class="st"> </span><span class="fl">173.99</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="st">  </span><span class="kw">count</span>()</a></code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##       n
+##   &lt;int&gt;
+## 1   219
+</code></pre>
+<p>A amplitude da altura dos filhos é maior do que a amplitude da altura
+ dos pais. Enquanto a altura dos pais varia entre 162,6cm e 185,4cm, a 
+dos filhos varia entre 156,7cm 187,2cm. A altura média dos filhos é de 
+172,9cm enquanto a altura média dos pais é ligeiramente maior, 173,5Ocm.
+ Analisando a mediana, vemos que a mediana dos pais é quase um 
+centímetro maior que a dos filhos enquanto a moda dos filhos é quase 
+dois centímetros maior. Porém, a altura de 175,768cm (moda) aparece 167 
+vezes para os filhos enquanto a altura de 173,99cm (moda) aparece 219 
+vezes para os pais.</p>
+<h2 id="2---medidas-de-dispersão-desvio-padrão-variância-e-coeficiente-de-varição">2 - Medidas de dispersão: desvio padrão, variância e coeficiente de varição:</h2>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">devPadPais =<span class="st"> </span><span class="kw">sd</span>(galton<span class="op">$</span>parent)</a>
+<a class="sourceLine" id="cb29-2" title="2">devPadFilhos =<span class="st"> </span><span class="kw">sd</span>(galton<span class="op">$</span>child)</a>
+<a class="sourceLine" id="cb29-3" title="3">varPais =<span class="st"> </span><span class="kw">var</span>(galton<span class="op">$</span>parent)</a>
+<a class="sourceLine" id="cb29-4" title="4">varFilhos =<span class="st"> </span><span class="kw">var</span>(galton<span class="op">$</span>child)</a>
+<a class="sourceLine" id="cb29-5" title="5">mediaPais =<span class="st"> </span><span class="kw">mean</span>(galton<span class="op">$</span>parent)</a>
+<a class="sourceLine" id="cb29-6" title="6">cvPais =<span class="st"> </span>(devPadPais<span class="op">/</span>mediaPais)<span class="op">*</span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb29-7" title="7">mediaFilhos =<span class="st"> </span><span class="kw">mean</span>(galton<span class="op">$</span>child)</a>
+<a class="sourceLine" id="cb29-8" title="8">cvFilhos =<span class="st"> </span>(devPadFilhos<span class="op">/</span>mediaFilhos)<span class="op">*</span><span class="dv">100</span></a></code></pre></div>
+<p>Criando vetores e inserindo os dados</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1">estatisticas =<span class="st"> </span><span class="kw">c</span>(<span class="st">"Desvio Padrão"</span>, <span class="st">"Variância"</span>, <span class="st">"Coeficiente de Variação"</span>)</a>
+<a class="sourceLine" id="cb30-2" title="2">child =<span class="st"> </span><span class="kw">c</span>(<span class="kw">round</span>(devPadFilhos, <span class="dt">digits =</span> <span class="dv">2</span>), <span class="kw">round</span>(varFilhos, <span class="dt">digits =</span> <span class="dv">2</span>), <span class="kw">round</span>(cvFilhos, <span class="dt">digits =</span> <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb30-3" title="3">parent =<span class="st"> </span><span class="kw">c</span>(<span class="kw">round</span>(devPadPais, <span class="dt">digits =</span> <span class="dv">2</span>), <span class="kw">round</span>(varPais, <span class="dt">digits =</span> <span class="dv">2</span>), <span class="kw">round</span>(cvPais, <span class="dt">digits =</span> <span class="dv">2</span>))</a></code></pre></div>
+<p>passo o nome dos vetores (sem precisar usar o “c”)</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">dispersao =<span class="st"> </span><span class="kw">data.frame</span>(estatisticas, child, parent)</a>
+<a class="sourceLine" id="cb31-2" title="2">dispersao</a></code></pre></div>
+<pre><code>##              estatisticas child parent
+## 1           Desvio Padrão   6.4   4.54
+## 2               Variância  40.9  20.61
+## 3 Coeficiente de Variação   3.7   2.62
+</code></pre>
+<p>Podemos também estimar uma medida da variância conjunta dos dados, 
+através da covariância, e uma medida do grau de associação linear entre 
+as variáveis, com o coeficiente de correlação.</p>
+<p>Covariância</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">covar =<span class="st"> </span><span class="kw">cov</span>(galton<span class="op">$</span>parent, galton<span class="op">$</span>child)</a>
+<a class="sourceLine" id="cb33-2" title="2">covar</a></code></pre></div>
+<pre><code>## [1] 13.32007
+</code></pre>
+<p>Correlação</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">correl =<span class="st"> </span><span class="kw">cor</span>(galton<span class="op">$</span>parent, galton<span class="op">$</span>child)</a>
+<a class="sourceLine" id="cb35-2" title="2">correl</a></code></pre></div>
+<pre><code>## [1] 0.4587624
+</code></pre>
+<p>Analisando os resultados das medidas de dispersão podemos ver que a 
+altura dos filhos tem uma variabilidade maior do que a dos pais em torno
+ da média. O mesmo pode ser visto pelo coeficiente de variação, que é 
+uma medida padronizada de dispersão. A covariância indica haver algum 
+grau de variação conjunta positiva entre as varáveis, mas a medida de 
+correlação, de 0,46, dá uma ideia de uma associação não muito forte 
+entre elas.</p>
+<p>Boxplot Quero comparar os dois boxplots lado a lado, por isso uso a função ‘par’</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="kw">boxplot</span>(galton<span class="op">$</span>child, <span class="dt">main =</span> <span class="st">"Boxplot para a altura dos filhos"</span>, <span class="dt">ylab =</span> <span class="st">"Child (cm)"</span>)</a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="kw">boxplot</span>(galton<span class="op">$</span>parent, <span class="dt">main =</span> <span class="st">"Boxplot para a altura dos pais"</span>, <span class="dt">ylab =</span> <span class="st">"Parent (cm)"</span>)</a></code></pre></div>
+<p><img src="data:image/png;base64,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DYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0CArSIChIg6AgDYKCNAgK0vwfAaT8nZc9NCoAAAAASUVORK5CYII="><!-- --></p>
+<p>Não conseguimos identificar dados discrepantes na variável altura dos
+ filhos, mas no caso da altura dos pais parece haver valores extremos 
+tanto na borda superior quanto inferior. Não vamos nos preocupar com 
+esses outliers por enquanto, acredito que eles não irão afetar o 
+resultado do modelo que irei estimar na sequência.</p>
+<p>Histograma</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb38-2" title="2"><span class="kw">hist</span>(galton<span class="op">$</span>child, <span class="dt">main =</span> <span class="st">"Histograma para a altura dos filhos"</span>, <span class="dt">xlab =</span> <span class="st">"Altura (cm)"</span>)</a>
+<a class="sourceLine" id="cb38-3" title="3"><span class="kw">hist</span>(galton<span class="op">$</span>parent, <span class="dt">main =</span> <span class="st">"Histograma para a altura dos pais"</span>, <span class="dt">xlab =</span> <span class="st">"Altura (cm)"</span>)</a></code></pre></div>
+<p><img src="data:image/png;base64,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"><!-- --></p>
+<p>O histograma mostra novamente os dados extremos da altura dos pais. 
+Ele mostra também como os dados são mais dispersos no caso da 
+distribuição da altura dos filhoes, comparativamente à distribuição da 
+altura dos pais, como se pode observar pelas medidas de dispersão.</p>
+<p>Quero analisar os dados em forma de categoria, para poder definir uma estatura relativa para cada variável.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">table</span>(galton<span class="op">$</span>child)</a></code></pre></div>
+<pre><code>## 
+## 156.718 157.988 160.528 163.068 165.608 168.148 170.688 173.228 175.768 178.308 
+##       5       7      32      59      48     117     138     120     167      99 
+## 180.848 183.388 185.928 187.198 
+##      64      41      17      14
+</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">table</span>(galton<span class="op">$</span>parent)</a></code></pre></div>
+<pre><code>## 
+## 162.56 163.83 166.37 168.91 171.45 173.99 176.53 179.07 181.61 184.15 185.42 
+##     14     23     66     78    211    219    183     68     43     19      4
+</code></pre>
+<p>Calculando a proporção de cada categoria</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1">model_table1 &lt;-<span class="st"> </span><span class="kw">table</span>(galton<span class="op">$</span>child)</a>
+<a class="sourceLine" id="cb43-2" title="2">model_table2 &lt;-<span class="st"> </span><span class="kw">table</span>(galton<span class="op">$</span>parent)</a>
+<a class="sourceLine" id="cb43-3" title="3"><span class="kw">prop.table</span>(model_table1) <span class="co">#retorna a proporção % de filhos em cada categoria de altura</span></a></code></pre></div>
+<pre><code>## 
+##     156.718     157.988     160.528     163.068     165.608     168.148 
+## 0.005387931 0.007543103 0.034482759 0.063577586 0.051724138 0.126077586 
+##     170.688     173.228     175.768     178.308     180.848     183.388 
+## 0.148706897 0.129310345 0.179956897 0.106681034 0.068965517 0.044181034 
+##     185.928     187.198 
+## 0.018318966 0.015086207
+</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">prop.table</span>(model_table2) <span class="co">#retorna a proporção % de pais em cada categoria de altura</span></a></code></pre></div>
+<pre><code>## 
+##      162.56      163.83      166.37      168.91      171.45      173.99 
+## 0.015086207 0.024784483 0.071120690 0.084051724 0.227370690 0.235991379 
+##      176.53      179.07      181.61      184.15      185.42 
+## 0.197198276 0.073275862 0.046336207 0.020474138 0.004310345
+</code></pre>
+<p>Graficamente talvez seja melhor para entender a diferença entre as séries</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">oma =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb47-2" title="2"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(galton<span class="op">$</span>child)), <span class="dt">xlab =</span> <span class="st">"child"</span>)</a>
+<a class="sourceLine" id="cb47-3" title="3"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(galton<span class="op">$</span>parent)), <span class="dt">xlab =</span> <span class="st">"parent"</span>)</a></code></pre></div>
+<p><img src="data:image/png;base64,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"><!-- --></p>
+<p>Vou criar duas novas colunas (variáveis categóricas), onde eu 
+classifico os indivíduos em baixo, mediano, alto e muito alto, usando 
+como critério os quartis definidos anteriormente nas estatísticas 
+descritivas, que se mostraram mais adequados. Porém, eu poderia também 
+usar a “prop.table” pra isso, mas não quero fazer isso nesse momento.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1">group_child &lt;-<span class="st"> </span><span class="cf">function</span>(child){</a>
+<a class="sourceLine" id="cb48-2" title="2">  <span class="cf">if</span> (child <span class="op">&gt;=</span><span class="st"> </span><span class="dv">156</span> <span class="op">&amp;</span><span class="st"> </span>child <span class="op">&lt;=</span><span class="st"> </span><span class="dv">168</span>){</a>
+<a class="sourceLine" id="cb48-3" title="3">    <span class="kw">return</span>(<span class="st">'baixo'</span>)</a>
+<a class="sourceLine" id="cb48-4" title="4">  }<span class="cf">else</span> <span class="cf">if</span>(child <span class="op">&gt;</span><span class="st"> </span><span class="dv">168</span> <span class="op">&amp;</span><span class="st"> </span>child <span class="op">&lt;=</span><span class="st"> </span><span class="dv">173</span>){</a>
+<a class="sourceLine" id="cb48-5" title="5">    <span class="kw">return</span>(<span class="st">'mediano'</span>)</a>
+<a class="sourceLine" id="cb48-6" title="6">  }<span class="cf">else</span> <span class="cf">if</span> (child <span class="op">&gt;</span><span class="st"> </span><span class="dv">173</span> <span class="op">&amp;</span><span class="st"> </span>child <span class="op">&lt;=</span><span class="st"> </span><span class="dv">178</span>){</a>
+<a class="sourceLine" id="cb48-7" title="7">    <span class="kw">return</span>(<span class="st">'alto'</span>)</a>
+<a class="sourceLine" id="cb48-8" title="8">  }<span class="cf">else</span> <span class="cf">if</span> (child <span class="op">&gt;</span><span class="st"> </span><span class="dv">178</span>){</a>
+<a class="sourceLine" id="cb48-9" title="9">    <span class="kw">return</span>(<span class="st">'muito alto'</span>)</a>
+<a class="sourceLine" id="cb48-10" title="10">  }</a>
+<a class="sourceLine" id="cb48-11" title="11">}</a>
+<a class="sourceLine" id="cb48-12" title="12"></a>
+<a class="sourceLine" id="cb48-13" title="13">group_parent &lt;-<span class="st"> </span><span class="cf">function</span>(parent){</a>
+<a class="sourceLine" id="cb48-14" title="14">  <span class="cf">if</span> (parent <span class="op">&gt;=</span><span class="st"> </span><span class="dv">162</span> <span class="op">&amp;</span><span class="st"> </span>parent <span class="op">&lt;=</span><span class="st"> </span><span class="dv">171</span>){</a>
+<a class="sourceLine" id="cb48-15" title="15">    <span class="kw">return</span>(<span class="st">'baixo'</span>)</a>
+<a class="sourceLine" id="cb48-16" title="16">  }<span class="cf">else</span> <span class="cf">if</span>(parent <span class="op">&gt;</span><span class="st"> </span><span class="dv">171</span> <span class="op">&amp;</span><span class="st"> </span>parent <span class="op">&lt;=</span><span class="st"> </span><span class="dv">174</span>){</a>
+<a class="sourceLine" id="cb48-17" title="17">    <span class="kw">return</span>(<span class="st">'mediano'</span>)</a>
+<a class="sourceLine" id="cb48-18" title="18">  }<span class="cf">else</span> <span class="cf">if</span> (parent <span class="op">&gt;</span><span class="st"> </span><span class="dv">174</span> <span class="op">&amp;</span><span class="st"> </span>parent <span class="op">&lt;=</span><span class="st"> </span><span class="dv">176</span>){</a>
+<a class="sourceLine" id="cb48-19" title="19">    <span class="kw">return</span>(<span class="st">'alto'</span>)</a>
+<a class="sourceLine" id="cb48-20" title="20">  }<span class="cf">else</span> <span class="cf">if</span> (parent <span class="op">&gt;</span><span class="st"> </span><span class="dv">176</span>){</a>
+<a class="sourceLine" id="cb48-21" title="21">    <span class="kw">return</span>(<span class="st">'muito alto'</span>)</a>
+<a class="sourceLine" id="cb48-22" title="22">  }</a>
+<a class="sourceLine" id="cb48-23" title="23">}</a>
+<a class="sourceLine" id="cb48-24" title="24"></a>
+<a class="sourceLine" id="cb48-25" title="25"></a>
+<a class="sourceLine" id="cb48-26" title="26"><span class="co"># ajusta essas transformações no dataset</span></a>
+<a class="sourceLine" id="cb48-27" title="27">galton<span class="op">$</span>child_group &lt;-<span class="st"> </span><span class="kw">sapply</span>(galton<span class="op">$</span>child, group_child)</a>
+<a class="sourceLine" id="cb48-28" title="28">galton<span class="op">$</span>child_group &lt;-<span class="st"> </span><span class="kw">as.factor</span>(galton<span class="op">$</span>child_group)</a>
+<a class="sourceLine" id="cb48-29" title="29"></a>
+<a class="sourceLine" id="cb48-30" title="30">galton<span class="op">$</span>parent_group &lt;-<span class="st"> </span><span class="kw">sapply</span>(galton<span class="op">$</span>parent, group_parent)</a>
+<a class="sourceLine" id="cb48-31" title="31">galton<span class="op">$</span>parent_group &lt;-<span class="st"> </span><span class="kw">as.factor</span>(galton<span class="op">$</span>parent_group)</a>
+<a class="sourceLine" id="cb48-32" title="32"></a>
+<a class="sourceLine" id="cb48-33" title="33"><span class="kw">head</span>(galton, <span class="dv">15</span>)</a></code></pre></div>
+<pre><code>##      child parent child_group parent_group
+## 1  156.718 179.07       baixo   muito alto
+## 2  156.718 173.99       baixo      mediano
+## 3  156.718 166.37       baixo        baixo
+## 4  156.718 163.83       baixo        baixo
+## 5  156.718 162.56       baixo        baixo
+## 6  157.988 171.45       baixo      mediano
+## 7  157.988 171.45       baixo      mediano
+## 8  157.988 171.45       baixo      mediano
+## 9  157.988 168.91       baixo        baixo
+## 10 157.988 168.91       baixo        baixo
+## 11 157.988 168.91       baixo        baixo
+## 12 157.988 163.83       baixo        baixo
+## 13 160.528 179.07       baixo   muito alto
+## 14 160.528 176.53       baixo   muito alto
+## 15 160.528 173.99       baixo      mediano
+</code></pre>
+<p>Nos gráficos gerados a partir da categorização é possível observar 
+que a medida que a altura dos pais aumenta, a altura dos filhos também 
+aumenta, mas não na mesma proporção. Isso corrobora com a tese de Galton
+ sobre a regressão à mediocridade, ou seja, a tendência dos filhos terem
+ altura mais próximas da média.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> galton) <span class="op">+</span></a>
+<a class="sourceLine" id="cb50-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> parent, <span class="dt">y =</span> child, <span class="dt">color =</span> child_group)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb50-3" title="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Gráfico de dispersão da altura dos filhos e dos pais"</span>,  </a>
+<a class="sourceLine" id="cb50-4" title="4">       <span class="dt">y=</span><span class="st">"Altura dos filhos"</span>,<span class="dt">x=</span><span class="st">"Altura dos pais"</span>, <span class="dt">caption=</span><span class="st">""</span>) </a></code></pre></div>
+<p><img src="data:image/png;base64,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"><!-- --></p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> galton) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> parent, <span class="dt">y =</span> child)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-3" title="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>child_group) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-4" title="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">"Gráfico de dispersão da altura dos filhos e dos pais"</span>,  </a>
+<a class="sourceLine" id="cb51-5" title="5">       <span class="dt">y=</span><span class="st">"Altura dos filhos"</span>,<span class="dt">x=</span><span class="st">"Altura dos pais"</span>, <span class="dt">caption=</span><span class="st">""</span>) </a></code></pre></div>
+<p><img src="data:image/png;base64,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"><!-- --></p>
+<p>O gráfico de disperãoa abaixo mostra que à medida em que a média da 
+altura dos pais aumenta, a média da altura dos filhos almenta também, 
+indicando a possibilidade de termos uma correlação positiva entre essas 
+duas variáveis.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1"><span class="kw">ggscatter</span>(galton, <span class="dt">x =</span> <span class="st">"parent"</span>, <span class="dt">y =</span> <span class="st">"child"</span>, </a>
+<a class="sourceLine" id="cb52-2" title="2">          <span class="dt">add =</span> <span class="st">"reg.line"</span>, <span class="dt">conf.int =</span> <span class="ot">TRUE</span>, </a>
+<a class="sourceLine" id="cb52-3" title="3">          <span class="dt">cor.coef =</span> <span class="ot">TRUE</span>, <span class="dt">cor.method =</span> <span class="st">"pearson"</span>,</a>
+<a class="sourceLine" id="cb52-4" title="4">          <span class="dt">xlab =</span> <span class="st">"Pais"</span>, <span class="dt">ylab =</span> <span class="st">"Filhos"</span>, <span class="dt">title =</span> <span class="st">"Gráfico de dispersão da altura dos pais e filhos"</span>)</a></code></pre></div>
+<pre><code>## `geom_smooth()` using formula 'y ~ x'
+</code></pre>
+<p><img src="data:image/png;base64,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"><!-- --></p>
+<p>Entrando na reta final, Vou dividir a amostra em dois grupos, sendo 
+70% para treinamento e 30% para teste. A partir daí eu treino o modelo e
+ verifico a sua acurácia ou capacidade de prever a altura dos filhos, 
+tendo como base apenas a altura dos pais (uma espécie de transferência 
+de altura, ou hereditariedade).</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1">linhas &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(galton), <span class="fl">0.7</span> <span class="op">*</span><span class="st"> </span><span class="kw">nrow</span>(galton))</a>
+<a class="sourceLine" id="cb54-2" title="2">dados_treino &lt;-<span class="st"> </span>galton[linhas,]</a>
+<a class="sourceLine" id="cb54-3" title="3">dados_teste &lt;-<span class="st"> </span>galton[<span class="op">-</span>linhas,]</a>
+<a class="sourceLine" id="cb54-4" title="4"></a>
+<a class="sourceLine" id="cb54-5" title="5"><span class="kw">head</span>(dados_treino, <span class="dv">15</span>)</a></code></pre></div>
+<pre><code>##       child parent child_group parent_group
+## 831 180.848 173.99  muito alto      mediano
+## 882 183.388 176.53  muito alto   muito alto
+## 14  160.528 176.53       baixo   muito alto
+## 329 170.688 173.99     mediano      mediano
+## 471 173.228 173.99        alto      mediano
+## 164 168.148 176.53     mediano   muito alto
+## 541 175.768 179.07        alto   muito alto
+## 162 168.148 176.53     mediano   muito alto
+## 649 175.768 171.45        alto      mediano
+## 769 178.308 171.45  muito alto      mediano
+## 744 178.308 173.99  muito alto      mediano
+## 232 168.148 171.45     mediano      mediano
+## 368 170.688 171.45     mediano      mediano
+## 913 185.928 173.99  muito alto      mediano
+## 429 173.228 176.53        alto   muito alto
+</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="kw">head</span>(dados_teste, <span class="dv">15</span>)</a></code></pre></div>
+<pre><code>##      child parent child_group parent_group
+## 1  156.718 179.07       baixo   muito alto
+## 3  156.718 166.37       baixo        baixo
+## 6  157.988 171.45       baixo      mediano
+## 9  157.988 168.91       baixo        baixo
+## 10 157.988 168.91       baixo        baixo
+## 11 157.988 168.91       baixo        baixo
+## 13 160.528 179.07       baixo   muito alto
+## 18 160.528 173.99       baixo      mediano
+## 23 160.528 171.45       baixo      mediano
+## 25 160.528 171.45       baixo      mediano
+## 27 160.528 168.91       baixo        baixo
+## 28 160.528 168.91       baixo        baixo
+## 29 160.528 168.91       baixo        baixo
+## 30 160.528 166.37       baixo        baixo
+## 35 160.528 166.37       baixo        baixo
+</code></pre>
+<p>Eu gosto de analisar o resultado de um modelo estimado, mesmo que 
+seja com dados de treino. Isso me ajuda a verificar se o modelo está 
+atendendo àquilo que se espera dele, a priori. No caso deste estudo, o 
+que eu espero encontrar é uma relação positiva e significativa entre a 
+variável dependente, child, e a variável explicativa, parent. Isso 
+significa que o coeficiente estimado “parent” tem que ter sinal positivo
+ e tem que ser estatisticamente significativo. Para treinar o modelo de 
+regressão eu uso a função “lm”.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1">modelo1 &lt;-<span class="st"> </span><span class="kw">lm</span>(child <span class="op">~</span><span class="st"> </span>parent, <span class="dt">data =</span> dados_treino)</a>
+<a class="sourceLine" id="cb58-2" title="2"><span class="kw">summary</span>(modelo1)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = child ~ parent, data = dados_treino)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -16.6134  -3.4658  -0.0304   4.1542  15.2096 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 55.67177    8.72727   6.379 3.39e-10 ***
+## parent       0.67624    0.05023  13.462  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 5.639 on 647 degrees of freedom
+## Multiple R-squared:  0.2188, Adjusted R-squared:  0.2176 
+## F-statistic: 181.2 on 1 and 647 DF,  p-value: &lt; 2.2e-16
+</code></pre>
+<p>Uma vez que o modelo tenha sido treinado, podemos ver que o sinal dos
+ coeficientes estimados estão de acordo com o que se esperava. Ou seja, o
+ intercepto é positivo, até mesmo porque não faria sentido ele ser 
+negativo. Ele representa a soma de todas as variáveis que de alguma 
+forma influenciam a altura dos filhos de forma significativa, mas que 
+não estamos considerando neste modelo. Em termos numéricos, sem 
+considerar a altura dos pais, os filhos terão pelo menos 57cm de altura.
+ É estranho pensar assim, mas podemos pensar também que os pais não são 
+capazes de influenciar pelo menos 57cm da altura dos filhos! O 
+coeficiente angular, determina a capacidade de transferência da altura 
+dos pais para os filhos. Para cada centímetro a mais de altura dos pais,
+ os filhos terão 0,67cm a mais de altura. Note que não é proporcional, 
+mas é positivo. Já tínhamos visto acima, pelas outras estatísticas, que 
+haveria uma relação positiva entre a altura dos pais e dos filhos, mas 
+que essa relação não seria muito forte. Isso significa que existem 
+outros fatores que afetam a altura dos filhos, e que não é apenas a 
+hereditariedade. Do ponto de vista da significância estatística, os dois
+ coeficientes estimados são estatisticamente significativos, ao nível de
+ 1% de significância estatística. A probabilidade de se cometer um erro 
+do tipo 1 é praticamente nulo. Olhando agora o R quadrado, vemos que o 
+nosso modelo é capaz de explicar apenas 22,32% da altura dos filhos. 
+Como dito anteriormente, há outras variáveis que não foram consideradas 
+neste estudo e que afetam de forma significativa a variável dependente. 
+Em termos práticos, a capacidade preditiva do modelo é bem fraca!</p>
+<p>Vamos prosseguir com a análise, apenas a título de exercício, tendo em vista a qualidade dos resultados apresentados.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1">previsoes &lt;-<span class="st"> </span><span class="kw">predict</span>(modelo1, dados_teste)</a>
+<a class="sourceLine" id="cb60-2" title="2"><span class="kw">summary</span>(previsoes)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   165.6   171.6   173.3   172.7   175.0   181.1
+</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="kw">summary</span>(galton<span class="op">$</span>child)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   156.7   168.1   173.2   172.9   178.3   187.2
+</code></pre>
+<p>Vamos dar uma olhada rápida no resumo estatístico dos resultados 
+previstos comparativamente com os dados de treino. O modelo super estima
+ os valores mínimos e subestima os valores máximos da série de dados.</p>
+<p>Tanto a média quanto a mediana são previstos de forma quase precisa, o que é bem interessante.</p>
+<p>Visualizando os valores previstos e observados</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1">resultados &lt;-<span class="st"> </span><span class="kw">cbind</span>(previsoes, dados_teste<span class="op">$</span>child) </a>
+<a class="sourceLine" id="cb64-2" title="2"><span class="kw">colnames</span>(resultados) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">'Previsto'</span>,<span class="st">'Real'</span>)</a>
+<a class="sourceLine" id="cb64-3" title="3">resultados &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(resultados)</a>
+<a class="sourceLine" id="cb64-4" title="4"><span class="kw">min</span>(resultados)</a></code></pre></div>
+<pre><code>## [1] 156.718
+</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" title="1"><span class="kw">max</span>(resultados)</a></code></pre></div>
+<pre><code>## [1] 187.198
+</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1"><span class="kw">head</span>(resultados, <span class="dv">15</span>)</a></code></pre></div>
+<pre><code>##    Previsto    Real
+## 1  176.7667 156.718
+## 3  168.1784 156.718
+## 6  171.6138 157.988
+## 9  169.8961 157.988
+## 10 169.8961 157.988
+## 11 169.8961 157.988
+## 13 176.7667 160.528
+## 18 173.3314 160.528
+## 23 171.6138 160.528
+## 25 171.6138 160.528
+## 27 169.8961 160.528
+## 28 169.8961 160.528
+## 29 169.8961 160.528
+## 30 168.1784 160.528
+## 35 168.1784 160.528
+</code></pre>
+
+
+
+</body></html>
