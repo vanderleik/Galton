@@ -31,7 +31,7 @@ library(ggpubr)
 
 galton <- 2.54 * galton
 
-View(galton)
+head(galton, 10)
 
 # Estatísticas descritivas
 
@@ -172,7 +172,7 @@ galton$child_group <- as.factor(galton$child_group)
 galton$parent_group <- sapply(galton$parent, group_parent)
 galton$parent_group <- as.factor(galton$parent_group)
 
-View(galton)
+head(galton, 10)
 
 # Nos gráficos gerados a partir da categorização é possível observar que a medida que a altura dos pais aumenta, a altura dos filhos também aumenta, mas não na mesma proporção. Isso corrobora com a tese de Galton sobre a regressão à mediocridade, ou seja, a tendência dos filhos terem altura mais próximas da média.
 
@@ -199,8 +199,8 @@ linhas <- sample(1:nrow(galton), 0.7 * nrow(galton))
 dados_treino <- galton[linhas,]
 dados_teste <- galton[-linhas,]
 
-View(dados_treino)
-View(dados_teste)
+head(dados_treino, 15)
+head(dados_teste, 15)
 
 # Eu gosto de analisar o resultado de um modelo estimado, mesmo que seja com dados de treino. Isso me ajuda a verificar se o modelo está atendendo àquilo que se espera dele, a priori.
 # No caso deste estudo, o que eu espero encontrar é uma relação positiva e significativa entre a variável dependente, child, e a variável explicativa, parent.
@@ -233,4 +233,4 @@ resultados <- as.data.frame(resultados)
 min(resultados)
 max(resultados)
 
-View(resultados)
+head(resultados, 15)
