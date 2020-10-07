@@ -1,6 +1,8 @@
 ---
 title: "Projeto nr. 01 - Altura dos filhos versus altura dos pais"
-output: github_document
+author: "Vanderlei Kleinschmidt"
+date: "06/10/2020"
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
